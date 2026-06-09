@@ -24,7 +24,7 @@ function About({ go }) {
   return (
     <div>
       <PageHero kicker={a.kicker} title={a.title} color="sky"
-        sub="A play-to-Class-8 school in Shahdara, Delhi — with a big heart for our youngest learners." />
+        sub="Govt.-recognised English-medium school in Naveen Shahdara, Delhi. Playgroup to Class 8." />
       <section className="section-sm">
         <div className="wrap" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 50, alignItems: "center" }}>
           <Reveal>
@@ -79,7 +79,7 @@ function Programs({ go }) {
         <div className="wrap">
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 26 }}>
             <span style={{ width: 30, height: 30, borderRadius: 9, background: "var(--coral)" }} />
-            <h2 style={{ fontSize: 30 }}>Early Years — our specialty</h2>
+            <h2 style={{ fontSize: 30 }}>Early Years (Playgroup & Nursery)</h2>
           </div>
           <div className="grid" style={{ gridTemplateColumns: "1fr 1fr" }}>
             {p.featured.map((f, i) => (
@@ -92,7 +92,7 @@ function Programs({ go }) {
         <div className="wrap">
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 26 }}>
             <span style={{ width: 30, height: 30, borderRadius: 9, background: "var(--sky)" }} />
-            <h2 style={{ fontSize: 30 }}>Growing up at Modern KD — to Class 8</h2>
+            <h2 style={{ fontSize: 30 }}>LKG to Class 8</h2>
           </div>
           <div className="grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
             {p.ladder.map((l, i) => {
@@ -151,13 +151,13 @@ function Facilities({ go }) {
               gridTemplateColumns: "1.2fr 1fr", gap: 36, alignItems: "center", padding: 0, overflow: "hidden" }}>
               <div style={{ padding: "44px 44px" }}>
                 <span className="pill" style={{ background: "rgba(255,255,255,.16)", color: "#fff", marginBottom: 14 }}>
-                  <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--grass)" }} />Our safety promise
+                  <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--grass)" }} />Parent CCTV access
                 </span>
-                <h2 style={{ fontSize: 30, color: "#fff", marginBottom: 12 }}>You can watch over your child, anytime</h2>
+                <h2 style={{ fontSize: 30, color: "#fff", marginBottom: 12 }}>Check on your child anytime</h2>
                 <p style={{ color: "rgba(255,255,255,.82)", fontSize: 16.5, marginBottom: 22 }}>
-                  Every classroom and play area is under live CCTV. Ask about parent camera access and our daily safety checklist when you visit.
+                  Every classroom and play area is on live CCTV. Ask about parent camera access during your school visit.
                 </p>
-                <button className="btn btn-sun" onClick={() => go("contact")}>Book a safety walkthrough</button>
+                <button className="btn btn-sun" onClick={() => go("contact")}>Book a school visit</button>
               </div>
               <Ph label="CCTV / safety photo" color="grass" rounded="0" src={f.img} style={{ height: "100%", minHeight: 240 }} />
             </div>

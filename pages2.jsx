@@ -42,7 +42,7 @@ function Gallery({ go }) {
             ))}
           </div>
           <p style={{ textAlign: "center", marginTop: 26, color: "var(--ink-soft)", fontSize: 15 }}>
-            Tap any tile to view · sample stock photos — we'll swap these for your real school photos.
+            Tap any tile to enlarge. Sample photos shown — actual campus photos will be added soon.
           </p>
         </div>
       </section>
@@ -84,8 +84,8 @@ function TestimonialStrip({ go }) {
   return (
     <section className="section" style={{ background: "var(--sky-t)", overflow: "hidden", position: "relative" }}>
       <div className="wrap">
-        <Head center kicker="Happy parents" title="Loved by families across Shahdara"
-          sub="Don't just take our word for it — hear from the parents who trust us every day." />
+        <Head center kicker="What parents say" title="Feedback from our parents"
+          sub="A few comments from parents of children currently studying with us." />
         <TestimonialSlider />
         <div style={{ textAlign: "center", marginTop: 30 }}>
           <button className="btn btn-ghost" onClick={() => go("testimonials")}>Read more stories</button>
@@ -139,8 +139,8 @@ function TestimonialSlider() {
 function Testimonials({ go }) {
   return (
     <div>
-      <PageHero kicker="Parent stories" title="Words from our Modern KD families"
-        sub="Real experiences from parents of our Playgroup, Nursery and primary children." color="sky" />
+      <PageHero kicker="Parent feedback" title="What parents say about us"
+        sub="Comments from parents of children in Playgroup, Nursery and Primary." color="sky" />
       <section className="section-sm">
         <div className="wrap">
           <TestimonialSlider />

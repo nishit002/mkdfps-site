@@ -111,10 +111,10 @@ function Contact() {
                     display: "grid", placeItems: "center", margin: "0 auto 20px" }}>
                     <span style={{ width: 30, height: 30, borderRadius: "50%", background: "var(--grass)" }} />
                   </div>
-                  <h3 style={{ fontSize: 27, marginBottom: 10 }}>Thank you, {f.parent.split(" ")[0]}! 🎉</h3>
+                  <h3 style={{ fontSize: 27, marginBottom: 10 }}>Thank you, {f.parent.split(" ")[0]}.</h3>
                   <p style={{ color: "var(--ink-soft)", fontSize: 17, maxWidth: 380, margin: "0 auto 22px" }}>
-                    We've received your enquiry for <b style={{ color: "var(--coral-d)" }}>{f.child}</b> ({f.klass}).
-                    Our team will call you on <b>{f.phone}</b> soon.
+                    Your enquiry for <b style={{ color: "var(--coral-d)" }}>{f.child}</b> ({f.klass}) has been received.
+                    Our admissions team will call you on <b>{f.phone}</b> within one working day.
                   </p>
                   <button className="btn btn-ghost" onClick={() => { setF(blank); setSent(false); }}>Send another</button>
                 </div>

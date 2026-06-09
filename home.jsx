@@ -147,8 +147,8 @@ function Highlights() {
   return (
     <section className="section">
       <div className="wrap">
-        <Head center kicker="Why parents love us" title="A school that feels like a warm hug"
-          sub="Everything we do is built around two things — keeping your child safe, and keeping them smiling." />
+        <Head center kicker="Why parents choose us" title="What sets us apart"
+          sub="Our focus is simple — keep your child safe, and keep them learning every day." />
         <div className="grid" style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
           {SITE.highlights.map((h, i) => (
             <Reveal key={i} delay={i * 90}>
@@ -174,8 +174,8 @@ function ProgramsTeaser({ go }) {
     <section className="section" style={{ background: "var(--bg-soft)" }}>
       <div className="wrap">
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 20 }}>
-          <Head kicker={p.kicker} title="The heart of Modern KD: Play & Nursery"
-            sub="Our littlest learners get the gentlest, most joyful start." />
+          <Head kicker={p.kicker} title="Playgroup and Nursery — our specialty"
+            sub="The two programmes we focus on most. Small batches, trained teachers and a settled, structured start." />
           <button className="btn btn-ghost" onClick={() => go("programs")} style={{ marginBottom: 44 }}>See all programs</button>
         </div>
         <div className="grid" style={{ gridTemplateColumns: "1fr 1fr" }}>
@@ -234,9 +234,9 @@ function AdmissionBand({ go }) {
                 <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--sun)" }} />
                 Limited seats · 2026–27
               </span>
-              <h2 style={{ fontSize: "clamp(30px, 4.5vw, 50px)", marginBottom: 12 }}>Admissions are open!</h2>
+              <h2 style={{ fontSize: "clamp(30px, 4.5vw, 50px)", marginBottom: 12 }}>Admissions Open for 2026–27</h2>
               <p style={{ fontSize: 19, maxWidth: 560, margin: "0 auto 28px", color: "rgba(255,255,255,.9)" }}>
-                Give your little one the brightest start. Book a school visit or send a quick enquiry today.
+                Seats are filling fast in Playgroup and Nursery. Book a school visit or send an enquiry today.
               </p>
               <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
                 <button className="btn btn-white" onClick={() => go("contact")}>Enquire Now</button>
@@ -351,7 +351,7 @@ function KidzChillStreet({ go }) {
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 22, justifyContent: "center" }}>
               <span style={{ width: 26, height: 26, borderRadius: 8, background: "var(--grape)",
                 boxShadow: "0 0 18px var(--grape)" }} />
-              <h3 style={{ fontSize: 24, color: "#fff" }}>Coming next to Kidz Chill Street</h3>
+              <h3 style={{ fontSize: 24, color: "#fff" }}>Coming soon</h3>
             </div>
             <div className="grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
               {k.future.map((it, i) => {

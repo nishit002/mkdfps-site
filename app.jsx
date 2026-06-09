@@ -76,7 +76,7 @@ function Footer({ go }) {
         <div>
           <Logo light onClick={() => go("home")} />
           <p style={{ marginTop: 18, maxWidth: 320, color: "rgba(255,255,255,.7)", fontSize: 15.5 }}>
-            A bright, safe and joyful school in {b.area} — caring for children from Playgroup all the way to Class 8.
+            Govt.-recognised English-medium school in {b.area}. Playgroup to Class 8. Established 2004.
           </p>
           <div style={{ display: "flex", gap: 10, marginTop: 20 }}>
             {["coral", "sun", "grass", "sky", "grape"].map((col, i) => (
@@ -114,7 +114,7 @@ function Footer({ go }) {
         <div className="wrap" style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 10,
           fontSize: 13.5, color: "rgba(255,255,255,.55)" }}>
           <span>© 2026 {b.name} {b.sub} · {SITE.contact.web}</span>
-          <span>Designed with care for little learners 🌈</span>
+          <span>All rights reserved.</span>
         </div>
       </div>
     </footer>
