@@ -8,14 +8,39 @@ function Hero({ go }) {
   return (
     <header style={{ position: "relative", overflow: "hidden",
       background: "linear-gradient(180deg, var(--sun-t), var(--bg) 70%)",
-      paddingTop: "calc(var(--nav-h) + 40px)" }}>
+      paddingTop: "calc(var(--nav-h) + 28px)" }}>
       {/* floating blobs */}
       <div className="blob" style={{ width: 320, height: 320, background: "var(--coral)", top: -60, left: -80, opacity: .22 }} />
       <div className="blob" style={{ width: 240, height: 240, background: "var(--sky)", top: 120, right: -60, opacity: .20 }} />
       <div className="blob" style={{ width: 180, height: 180, background: "var(--grass)", bottom: 40, left: "40%", opacity: .16 }} />
 
+      {/* Real campus banner — shows the actual school building */}
+      <div className="wrap rel" style={{ paddingBottom: 28 }}>
+        <div style={{ position: "relative", borderRadius: "var(--radius-lg)", overflow: "hidden",
+          boxShadow: "var(--shadow)", border: "4px solid #fff", aspectRatio: "851 / 315",
+          transition: "transform .6s cubic-bezier(.22,1,.36,1)",
+          transform: mount ? "none" : "translateY(20px) scale(.98)",
+          opacity: mount ? 1 : 0 }}>
+          <img src={SITE.brand.campusPhoto} alt="Modern KD Public School campus, Panchsheel Garden, Naveen Shahdara"
+            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="eager" />
+          <div style={{ position: "absolute", left: 18, top: 18,
+            background: "rgba(255,255,255,.92)", color: "var(--ink)", padding: "8px 14px",
+            borderRadius: 999, fontFamily: "Fredoka", fontWeight: 600, fontSize: 13.5,
+            display: "inline-flex", alignItems: "center", gap: 8, boxShadow: "var(--shadow-soft)" }}>
+            <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--grass)" }} />
+            Our Campus · Panchsheel Garden, Naveen Shahdara
+          </div>
+          <div style={{ position: "absolute", right: 18, bottom: 18,
+            background: "var(--coral)", color: "#fff", padding: "8px 14px",
+            borderRadius: 999, fontFamily: "Fredoka", fontWeight: 600, fontSize: 13.5,
+            boxShadow: "0 10px 22px -10px var(--coral)" }}>
+            ESTD. 2004 · Govt. Recognised
+          </div>
+        </div>
+      </div>
+
       <div className="wrap rel" style={{ display: "grid", gridTemplateColumns: "1.05fr 0.95fr",
-        gap: 50, alignItems: "center", paddingBottom: 70, minHeight: "62vh" }}>
+        gap: 50, alignItems: "center", paddingBottom: 70, minHeight: "52vh" }}>
         {/* left */}
         <div>
           <span className="kicker" style={{

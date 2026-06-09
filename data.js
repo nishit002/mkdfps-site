@@ -10,6 +10,7 @@ window.SITE = {
     web: "mkdfps.in",
     estd: "2004",
     years: "25",
+    campusPhoto: "./images/campus.jpg",
   },
 
   nav: [
