@@ -1,12 +1,15 @@
 /* All site content lives here so it's easy to edit. */
 window.SITE = {
   brand: {
-    name: "MKD Field",
+    name: "Modern KD Field",
     sub: "Public School",
     sample: false,
-    tagline: "Play • Nursery • Class 1–8",
-    area: "Shahdara, Delhi",
+    tagline: "ESTD. 2004 · Govt. Recognised · Play to Class 8",
+    motto: "Learn · Grow · Succeed",
+    area: "Naveen Shahdara, Delhi",
     web: "mkdfps.in",
+    estd: "2004",
+    years: "25",
   },
 
   nav: [
@@ -19,16 +22,21 @@ window.SITE = {
     { id: "contact", label: "Contact" },
   ],
 
+  /* Quick links (not on nav, used by sticky CTA / footer) */
+  quickLinks: [
+    { label: "Kidz Chill Street", anchor: "kidz" },
+  ],
+
   hero: {
-    badge: "Admissions Open 2026–27",
+    badge: "25th Year · Admissions Open 2026–27",
     img: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=900&q=75",
     title: ["A bright, safe", "start for your", "little one"],
     accentWord: 2, // which line gets the colored underline
-    sub: "Joyful early learning for Playgroup & Nursery — plus a caring journey all the way to Class 8. Right here in Shahdara, Delhi.",
+    sub: "Joyful early learning for Playgroup & Nursery — plus a caring journey all the way to Class 8. Celebrating 25 years of education in Naveen Shahdara, Delhi.",
     primary: "Enquire for Admission",
     secondary: "Explore Programs",
     stats: [
-      { n: "18+", l: "Years of care" },
+      { n: "25", l: "Years of care" },
       { n: "1:10", l: "Teacher ratio" },
       { n: "100%", l: "CCTV covered" },
     ],
@@ -48,7 +56,7 @@ window.SITE = {
     img: "https://images.unsplash.com/photo-1544773088-d142e38f5793?auto=format&fit=crop&w=1100&q=75",
     title: "Where little ones feel at home",
     body: [
-      "MKD Field Public School began with one simple belief — that a child's first years should be full of warmth, wonder and play. We are a play-to-Class-8 school in Shahdara, Delhi, with a special love for our youngest learners in Playgroup and Nursery.",
+      "Modern KD Field Public School began in 2004 with one simple belief — that a child's first years should be full of warmth, wonder and play. Twenty-five years on, we are a Govt.-recognised, play-to-Class-8 school in Panchsheel Garden, Naveen Shahdara, Delhi, with a special love for our youngest learners in Playgroup and Nursery.",
       "Our teachers are trained in early-childhood care, our spaces are designed to be safe and joyful, and our doors are always open to parents. Every day, we help curious little minds grow confident, kind and ready for the world.",
     ],
     points: [
@@ -100,16 +108,18 @@ window.SITE = {
     sub: "Your child's safety is the foundation of everything. Here's how we keep every day secure, clean and joyful.",
     items: [
       { color: "sky",   t: "CCTV everywhere", d: "Cameras across classrooms, corridors and play areas, monitored through the day." },
-      { color: "coral", t: "Secure entry & exit", d: "Controlled gates and a strict authorised-person-only release policy." },
+      { color: "coral", t: "Dedicated Medical Aid", d: "Well-equipped first-aid & dressing room with MBBS/MD doctor guidance and instant online video consultation — every day till 8 PM." },
       { color: "grass", t: "GPS school transport", d: "Tracked vans with trained drivers and a female attendant on every route." },
+      { color: "sun",   t: "Children's Canteen", d: "Modern in-campus canteen with hygienic popcorn, cold drinks and snacks (chargeable, parents' choice)." },
+      { color: "grape", t: "Healthy & hygienic", d: "RO drinking water, clean washrooms and sanitised toys & equipment." },
+      { color: "coral", t: "Secure entry & exit", d: "Controlled gates and a strict authorised-person-only release policy." },
       { color: "sun",   t: "Soft, safe play area", d: "Cushioned floors, rounded edges and age-appropriate, sanitised equipment." },
-      { color: "grape", t: "Healthy & hygienic", d: "RO drinking water, clean washrooms and nutritious meal options." },
-      { color: "coral", t: "First-aid & care", d: "On-site first-aid, trained staff and quick parent communication." },
+      { color: "sky",   t: "Kidz Chill Street access", d: "Members of our flagship 100% screen-free play street — toy jeep rides, dolphin zone, live music and more." },
     ],
   },
 
   gallery: {
-    kicker: "Life at MKD Field",
+    kicker: "Life at Modern KD Field",
     title: "Smiles, colours & busy little hands",
     sub: "A peek into our classrooms, play zones and celebration days.",
     items: [
@@ -139,7 +149,7 @@ window.SITE = {
 
   testimonials: [
     { color: "coral", name: "Priya S.", role: "Mother of a Nursery child", quote: "My daughter cried on day one and now she refuses to come home! The teachers are so loving and I get updates every day. The CCTV access gives me real peace of mind." },
-    { color: "sky",   name: "Rahul M.", role: "Father of a Playgroup child", quote: "We chose MKD Field for the safety and stayed for the warmth. The play area is spotless and the transport van tracking is brilliant." },
+    { color: "sky",   name: "Rahul M.", role: "Father of a Playgroup child", quote: "We chose Modern KD Field for the safety and stayed for the warmth. The play area is spotless and the transport van tracking is brilliant." },
     { color: "grass", name: "Aisha K.", role: "Mother of a Class 2 student", quote: "We've been here since playgroup. The way they balance fun and learning is wonderful — my son actually looks forward to school." },
     { color: "grape", name: "Vikram R.", role: "Father of a Nursery child", quote: "Clean, safe and genuinely caring. The admission process was simple and the staff answered all our worried-parent questions patiently." },
   ],
@@ -148,12 +158,37 @@ window.SITE = {
     kicker: "Visit / Contact",
     title: "Come say hello",
     sub: "We'd love to show you around. Walk in, call, or drop us a message anytime.",
-    address: "X-13, 1st Floor, Shahdara, Delhi – 110032",
-    phone: "+91 87555 55525",
-    whatsapp: "+91 87555 55525",
-    altphone: "+91 87554 43322",
+    address: "Modern KD Field Public School Campus, Panchsheel Garden, Naveen Shahdara, Delhi – 110032",
+    phone: "+91 87 55 55 55 25",
+    whatsapp: "+91 87 55 55 55 25",
     email: "mkdfieldpublicschool@gmail.com",
-    web: "mkdfps.in",
-    hours: "Mon – Sat · 8:00 AM – 4:00 PM",
+    web: "www.mkdfps.in",
+    hours: "School: Mon–Sat 8 AM – 4 PM · Kidz Chill Street: Daily 4 PM – 8 PM",
+  },
+
+  kidzStreet: {
+    kicker: "World-first initiative",
+    title: "Introducing Kidz Chill Street",
+    subEn: "Play, Learn & Grow — fun every day, without mobiles.",
+    subHi: "मज़ा हर रोज़, बिना मोबाइल के!",
+    note: "India's first 100% screen-free play street, right inside our campus. Phones are safely locked away on entry — kids step into a magical world of real-world play, creativity and learning.",
+    opening: "Grand Opening · 15 June 2026",
+    hours: "Open daily · 4:00 PM – 8:00 PM · 365 days",
+    offer: "Special launch offer: 7 DAYS FREE!",
+    offerSub: "Daily Pass & Monthly Subscription available — both designed to be very affordable.",
+    photo: "FREE professional photography — beautiful moments captured & sent straight to parents on WhatsApp.",
+    attractions: [
+      { color: "coral", t: "Toy Jeep Rides", d: "Kids' own safe & thrilling driving street where they actually learn to drive toy jeeps." },
+      { color: "sky",   t: "Remote-Control Dolphin Zone", d: "A magical water zone where children steer a swimming dolphin by remote." },
+      { color: "grass", t: "Physical Games & Fun Activities", d: "Old-school and modern physical games that keep little bodies & minds fit." },
+      { color: "grape", t: "Live Music & Baby Dance", d: "A safe stage for tiny ones to dance, sing and let their hidden talent out." },
+      { color: "sun",   t: "Happy Vibes Canteen", d: "Hygienic popcorn, cold drinks and snacks — fresh, tasty and lovingly served." },
+      { color: "sky",   t: "Kids Photography", d: "Professional photographers capture moments and send them straight to parents on WhatsApp — free." },
+    ],
+    future: [
+      { color: "grape", t: "Hansgulla Gali (Comedy Mirror Alley)", d: "Magical mirrors that make kids laugh till they fall — a perfect photo zone." },
+      { color: "grass", t: "Touch & Feel Pets Corner", d: "White rabbits, guinea pigs and colourful love-birds in a fully legal, safe enclosure." },
+      { color: "sun",   t: "Kids Storybook Library & Role-Play Town", d: "Story tree, supermarket and doctor-clinic role-play sets — kids become chef, doctor and shopkeeper." },
+    ],
   },
 };

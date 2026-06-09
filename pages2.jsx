@@ -139,7 +139,7 @@ function TestimonialSlider() {
 function Testimonials({ go }) {
   return (
     <div>
-      <PageHero kicker="Parent stories" title="Words from our MKD Field families"
+      <PageHero kicker="Parent stories" title="Words from our Modern KD Field families"
         sub="Real experiences from parents of our Playgroup, Nursery and primary children." color="sky" />
       <section className="section-sm">
         <div className="wrap">

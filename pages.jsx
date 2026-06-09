@@ -92,7 +92,7 @@ function Programs({ go }) {
         <div className="wrap">
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 26 }}>
             <span style={{ width: 30, height: 30, borderRadius: 9, background: "var(--sky)" }} />
-            <h2 style={{ fontSize: 30 }}>Growing up at MKD Field — to Class 8</h2>
+            <h2 style={{ fontSize: 30 }}>Growing up at Modern KD Field — to Class 8</h2>
           </div>
           <div className="grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
             {p.ladder.map((l, i) => {

@@ -70,16 +70,16 @@ function Logo({ light = false, onClick }) {
         <span style={{ width: 20, height: 20, borderRadius: "50%",
           background: "#fff" }} />
       </span>
-      <span style={{ textAlign: "left", lineHeight: 1 }}>
+      <span style={{ textAlign: "left", lineHeight: 1, minWidth: 0 }}>
         <span style={{ display: "flex", alignItems: "baseline", gap: 6, whiteSpace: "nowrap" }}>
-          <span style={{ fontFamily: "Fredoka", fontWeight: 600, fontSize: 22,
+          <span style={{ fontFamily: "Fredoka", fontWeight: 600, fontSize: 19,
             color: light ? "#fff" : "var(--ink)" }}>{b.name}</span>
-          <span style={{ fontFamily: "Fredoka", fontWeight: 500, fontSize: 22,
+          <span style={{ fontFamily: "Fredoka", fontWeight: 500, fontSize: 19,
             color: "var(--coral)" }}>{b.sub}</span>
         </span>
-        <span style={{ display: "block", fontSize: 11.5, fontWeight: 700, letterSpacing: ".06em",
+        <span style={{ display: "block", fontSize: 10.5, fontWeight: 700, letterSpacing: ".06em",
           textTransform: "uppercase", color: light ? "rgba(255,255,255,.8)" : "var(--ink-soft)",
-          marginTop: 3 }}>{b.tagline}</span>
+          marginTop: 4, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", maxWidth: 360 }}>{b.tagline}</span>
       </span>
     </button>
   );

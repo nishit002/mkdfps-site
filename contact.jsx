@@ -193,7 +193,7 @@ function MapBlock() {
         </span>
       </div>
       <div style={{ padding: 16, display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12 }}>
-        <span style={{ fontSize: 14.5, color: "var(--ink-soft)", fontWeight: 700 }}>Shahdara, Delhi</span>
+        <span style={{ fontSize: 14.5, color: "var(--ink-soft)", fontWeight: 700 }}>Panchsheel Garden, Naveen Shahdara</span>
         <button className="btn" style={{ background: "var(--sky)", color: "#fff", padding: "10px 18px", fontSize: 15 }}>Get Directions</button>
       </div>
     </div>

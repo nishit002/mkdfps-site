@@ -149,7 +149,7 @@ function ProgramsTeaser({ go }) {
     <section className="section" style={{ background: "var(--bg-soft)" }}>
       <div className="wrap">
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 20 }}>
-          <Head kicker={p.kicker} title="The heart of MKD Field: Play & Nursery"
+          <Head kicker={p.kicker} title="The heart of Modern KD Field: Play & Nursery"
             sub="Our littlest learners get the gentlest, most joyful start." />
           <button className="btn btn-ghost" onClick={() => go("programs")} style={{ marginBottom: 44 }}>See all programs</button>
         </div>
@@ -228,6 +228,132 @@ function AdmissionBand({ go }) {
   );
 }
 
+/* ===== KIDZ CHILL STREET — the flagship screen-free play street ===== */
+function KidzChillStreet({ go }) {
+  const k = SITE.kidzStreet;
+  const neonGlow = "0 0 18px currentColor, 0 0 36px currentColor";
+  return (
+    <section id="kidz" style={{ position: "relative", overflow: "hidden",
+      background: "radial-gradient(ellipse at 20% 20%, oklch(0.28 0.10 280), oklch(0.16 0.06 275) 60%)",
+      color: "#fff", padding: "96px 0", scrollMarginTop: "calc(var(--nav-h) + 12px)" }}>
+      {/* neon blobs */}
+      <div className="blob" style={{ width: 260, height: 260, background: "var(--coral)", top: -60, right: "8%", opacity: .35 }} />
+      <div className="blob" style={{ width: 220, height: 220, background: "var(--sky)", bottom: -60, left: "6%", opacity: .35 }} />
+      <div className="blob" style={{ width: 180, height: 180, background: "var(--sun)", top: "40%", left: "45%", opacity: .25 }} />
+
+      <div className="wrap rel">
+        <Reveal>
+          <div style={{ textAlign: "center", maxWidth: 760, margin: "0 auto 50px" }}>
+            <span className="kicker" style={{ color: "var(--sun)", background: "rgba(255,255,255,.08)" }}>
+              <span className="dot" style={{ background: "var(--sun)", animation: "pulse 1.6s infinite" }} />{k.kicker}
+            </span>
+            <h2 style={{ fontSize: "clamp(36px, 6vw, 64px)", margin: "16px 0 14px", color: "#fff",
+              textShadow: neonGlow, letterSpacing: "0.01em" }}>
+              <span style={{ color: "var(--coral)" }}>Kidz</span>{" "}
+              <span style={{ color: "var(--sky)" }}>Chill</span>{" "}
+              <span style={{ color: "var(--sun)" }}>Street</span>
+            </h2>
+            <p style={{ fontSize: 20, color: "rgba(255,255,255,.9)", marginBottom: 6 }}>{k.subEn}</p>
+            <p style={{ fontFamily: "Fredoka", fontSize: 18, color: "var(--sun)" }}>{k.subHi}</p>
+            <p style={{ fontSize: 15.5, color: "rgba(255,255,255,.72)", marginTop: 18, maxWidth: 620, marginLeft: "auto", marginRight: "auto" }}>
+              {k.note}
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 12, marginTop: 22 }}>
+              <span className="pill" style={{ background: "rgba(255,255,255,.10)", color: "#fff", fontWeight: 700 }}>
+                <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--grass)" }} />
+                {k.opening}
+              </span>
+              <span className="pill" style={{ background: "rgba(255,255,255,.10)", color: "#fff", fontWeight: 700 }}>
+                <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--sky)" }} />
+                {k.hours}
+              </span>
+              <span className="pill" style={{ background: "rgba(255,255,255,.10)", color: "#fff", fontWeight: 700 }}>
+                <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--coral)" }} />
+                100% No Mobile Zone
+              </span>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* attractions grid */}
+        <div className="grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
+          {k.attractions.map((it, i) => {
+            const cc = C[it.color];
+            return (
+              <Reveal key={i} delay={(i % 3) * 90}>
+                <div style={{ background: "rgba(255,255,255,.06)", borderRadius: "var(--radius)",
+                  padding: 26, height: "100%", border: `1px solid rgba(255,255,255,.10)`,
+                  backdropFilter: "blur(4px)", transition: "transform .2s" }}>
+                  <div style={{ width: 46, height: 46, borderRadius: 14, background: cc.a,
+                    display: "grid", placeItems: "center",
+                    boxShadow: `0 0 18px ${cc.a}, 0 0 36px ${cc.a}` }}>
+                    <span style={{ width: 16, height: 16, borderRadius: i % 2 ? "50%" : 4, background: "#fff" }} />
+                  </div>
+                  <h3 style={{ fontSize: 19, marginTop: 16, marginBottom: 8, color: "#fff" }}>{it.t}</h3>
+                  <p style={{ fontSize: 14.5, color: "rgba(255,255,255,.78)" }}>{it.d}</p>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+
+        {/* launch offer band */}
+        <Reveal delay={120}>
+          <div style={{ marginTop: 44, borderRadius: "var(--radius-lg)", padding: "30px 28px",
+            background: "linear-gradient(120deg, var(--coral), var(--sun))", color: oklchOnWarm(),
+            textAlign: "center", boxShadow: "0 30px 60px -20px rgba(0,0,0,.5)" }}>
+            <div style={{ fontFamily: "Fredoka", fontWeight: 600, fontSize: "clamp(26px, 4vw, 40px)", color: "#fff",
+              textShadow: "0 2px 0 rgba(0,0,0,.18)" }}>
+              {k.offer}
+            </div>
+            <p style={{ marginTop: 8, color: "rgba(255,255,255,.92)", fontSize: 16, fontWeight: 700 }}>{k.offerSub}</p>
+            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 12, marginTop: 18 }}>
+              <button className="btn btn-white" onClick={() => go("contact")}>Book a Day Pass</button>
+              <button className="btn" onClick={() => go("contact")}
+                style={{ background: "rgba(0,0,0,.22)", color: "#fff", boxShadow: "inset 0 0 0 2px rgba(255,255,255,.55)" }}>
+                Monthly Subscription
+              </button>
+            </div>
+            <p style={{ marginTop: 16, fontSize: 13.5, color: "rgba(255,255,255,.92)", fontWeight: 700 }}>
+              📸 {k.photo}
+            </p>
+          </div>
+        </Reveal>
+
+        {/* future expansions */}
+        <Reveal delay={180}>
+          <div style={{ marginTop: 44 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 22, justifyContent: "center" }}>
+              <span style={{ width: 26, height: 26, borderRadius: 8, background: "var(--grape)",
+                boxShadow: "0 0 18px var(--grape)" }} />
+              <h3 style={{ fontSize: 24, color: "#fff" }}>Coming next to Kidz Chill Street</h3>
+            </div>
+            <div className="grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
+              {k.future.map((it, i) => {
+                const cc = C[it.color];
+                return (
+                  <div key={i} style={{ background: "rgba(255,255,255,.04)", borderRadius: "var(--radius)",
+                    padding: 22, border: `1px dashed rgba(255,255,255,.18)` }}>
+                    <div style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+                      <span style={{ width: 10, height: 10, borderRadius: "50%", background: cc.a,
+                        boxShadow: `0 0 12px ${cc.a}` }} />
+                      <span style={{ fontFamily: "Fredoka", fontSize: 14, color: cc.a, fontWeight: 600,
+                        textTransform: "uppercase", letterSpacing: ".05em" }}>Coming soon</span>
+                    </div>
+                    <h4 style={{ fontSize: 17, color: "#fff", marginBottom: 6 }}>{it.t}</h4>
+                    <p style={{ fontSize: 14, color: "rgba(255,255,255,.72)" }}>{it.d}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+function oklchOnWarm() { return "oklch(0.30 0.07 50)"; }
+
 function Home({ go }) {
   return (
     <div>
@@ -235,10 +361,11 @@ function Home({ go }) {
       <Marquee />
       <Highlights />
       <ProgramsTeaser go={go} />
+      <KidzChillStreet go={go} />
       <TestimonialStrip go={go} />
       <AdmissionBand go={go} />
     </div>
   );
 }
 
-Object.assign(window, { Home, ProgramCard, Marquee });
+Object.assign(window, { Home, ProgramCard, Marquee, KidzChillStreet });
