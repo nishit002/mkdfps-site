@@ -1,0 +1,157 @@
+/* ============================================================
+   MKD Field Public School — Playful & Bright design system
+   ============================================================ */
+
+:root {
+  /* Canvas + ink (warm, low saturation) */
+  --bg:        oklch(0.985 0.012 95);
+  --bg-soft:   oklch(0.965 0.018 95);
+  --card:      oklch(1 0 0);
+  --ink:       oklch(0.30 0.045 275);
+  --ink-soft:  oklch(0.46 0.035 275);
+  --line:      oklch(0.90 0.02 275);
+
+  /* Cohesive rainbow accents (shared chroma/lightness, varied hue) */
+  --coral:   oklch(0.71 0.165 28);
+  --coral-d: oklch(0.58 0.16 28);
+  --sun:     oklch(0.84 0.155 88);
+  --sun-d:   oklch(0.74 0.15 78);
+  --grass:   oklch(0.74 0.16 150);
+  --grass-d: oklch(0.60 0.15 150);
+  --sky:     oklch(0.72 0.13 230);
+  --sky-d:   oklch(0.58 0.14 245);
+  --grape:   oklch(0.70 0.155 320);
+  --grape-d: oklch(0.56 0.16 320);
+
+  /* tints (very light backgrounds) */
+  --coral-t: oklch(0.95 0.04 28);
+  --sun-t:   oklch(0.95 0.05 88);
+  --grass-t: oklch(0.95 0.045 150);
+  --sky-t:   oklch(0.95 0.04 230);
+  --grape-t: oklch(0.95 0.04 320);
+
+  --radius: 22px;
+  --radius-lg: 34px;
+  --radius-sm: 14px;
+  --shadow: 0 18px 40px -22px oklch(0.30 0.05 275 / 0.45);
+  --shadow-soft: 0 10px 30px -18px oklch(0.30 0.05 275 / 0.40);
+  --maxw: 1200px;
+  --nav-h: 78px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Nunito", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .display {
+  font-family: "Fredoka", system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+p { margin: 0; text-wrap: pretty; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { font-family: inherit; cursor: pointer; }
+
+.wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+
+.section { padding: 88px 0; position: relative; }
+.section-sm { padding: 60px 0; }
+
+/* ---------- Eyebrow / kicker ---------- */
+.kicker {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: "Fredoka", sans-serif; font-weight: 500;
+  font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--coral-d);
+  background: var(--coral-t);
+  padding: 7px 16px; border-radius: 999px;
+}
+.kicker .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--coral); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: "Fredoka", sans-serif; font-weight: 500; font-size: 17px;
+  padding: 14px 26px; border-radius: 999px; border: none;
+  transition: transform .18s cubic-bezier(.34,1.56,.64,1), box-shadow .2s, background .2s;
+  white-space: nowrap;
+}
+.btn:active { transform: scale(.96); }
+.btn-primary { background: var(--coral); color: #fff; box-shadow: 0 10px 22px -10px var(--coral); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 28px -10px var(--coral); }
+.btn-sun { background: var(--sun); color: oklch(0.35 0.08 70); box-shadow: 0 10px 22px -10px var(--sun-d); }
+.btn-sun:hover { transform: translateY(-3px); }
+.btn-ghost { background: var(--card); color: var(--ink); box-shadow: inset 0 0 0 2px var(--line); }
+.btn-ghost:hover { transform: translateY(-3px); box-shadow: inset 0 0 0 2px var(--coral); }
+.btn-white { background:#fff; color: var(--coral-d); box-shadow: var(--shadow-soft); }
+.btn-white:hover { transform: translateY(-3px); }
+
+/* ---------- Section heading block ---------- */
+.head { max-width: 720px; margin-bottom: 44px; }
+.head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.head h2 { font-size: clamp(32px, 4.4vw, 52px); margin: 16px 0 14px; }
+.head p { color: var(--ink-soft); font-size: 19px; }
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--card); border-radius: var(--radius);
+  box-shadow: var(--shadow-soft); padding: 30px;
+  border: 1px solid oklch(0.94 0.02 275);
+}
+
+/* ---------- Image placeholder ---------- */
+.ph {
+  position: relative; border-radius: var(--radius); overflow: hidden;
+  background:
+    repeating-linear-gradient(135deg,
+      oklch(0.93 0.02 275) 0 14px,
+      oklch(0.96 0.015 275) 14px 28px);
+  display: flex; align-items: center; justify-content: center;
+  color: oklch(0.50 0.03 275);
+}
+.ph .ph-label {
+  font-family: "Nunito", monospace; font-size: 13px; font-weight: 700;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  background: oklch(1 0 0 / 0.78); padding: 7px 13px; border-radius: 999px;
+  backdrop-filter: blur(2px);
+}
+
+/* ---------- Blobs / decorative ---------- */
+.blob { position: absolute; border-radius: 50%; filter: blur(2px); opacity: .5; pointer-events: none; z-index: 0; }
+
+/* wave divider */
+.wave { display: block; width: 100%; height: 70px; }
+
+/* ---------- Utility ---------- */
+.grid { display: grid; gap: 24px; }
+.center { text-align: center; }
+.rel { position: relative; z-index: 1; }
+.pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: "Fredoka", sans-serif; font-weight: 500; font-size: 14px;
+  padding: 6px 14px; border-radius: 999px;
+}
+
+/* reveal-on-scroll */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1); }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
