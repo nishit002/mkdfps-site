@@ -1,7 +1,7 @@
 /* All site content lives here so it's easy to edit. */
 window.SITE = {
   brand: {
-    name: "Modern KD Field",
+    name: "Modern KD",
     sub: "Public School",
     sample: false,
     tagline: "ESTD. 2004 · Govt. Recognised · Play to Class 8",
@@ -56,7 +56,7 @@ window.SITE = {
     img: "https://images.unsplash.com/photo-1544773088-d142e38f5793?auto=format&fit=crop&w=1100&q=75",
     title: "Where little ones feel at home",
     body: [
-      "Modern KD Field Public School began in 2004 with one simple belief — that a child's first years should be full of warmth, wonder and play. Twenty-five years on, we are a Govt.-recognised, play-to-Class-8 school in Panchsheel Garden, Naveen Shahdara, Delhi, with a special love for our youngest learners in Playgroup and Nursery.",
+      "Modern KD Public School began in 2004 with one simple belief — that a child's first years should be full of warmth, wonder and play. Twenty-five years on, we are a Govt.-recognised, play-to-Class-8 school in Panchsheel Garden, Naveen Shahdara, Delhi, with a special love for our youngest learners in Playgroup and Nursery.",
       "Our teachers are trained in early-childhood care, our spaces are designed to be safe and joyful, and our doors are always open to parents. Every day, we help curious little minds grow confident, kind and ready for the world.",
     ],
     points: [
@@ -119,7 +119,7 @@ window.SITE = {
   },
 
   gallery: {
-    kicker: "Life at Modern KD Field",
+    kicker: "Life at Modern KD",
     title: "Smiles, colours & busy little hands",
     sub: "A peek into our classrooms, play zones and celebration days.",
     items: [
@@ -149,7 +149,7 @@ window.SITE = {
 
   testimonials: [
     { color: "coral", name: "Priya S.", role: "Mother of a Nursery child", quote: "My daughter cried on day one and now she refuses to come home! The teachers are so loving and I get updates every day. The CCTV access gives me real peace of mind." },
-    { color: "sky",   name: "Rahul M.", role: "Father of a Playgroup child", quote: "We chose Modern KD Field for the safety and stayed for the warmth. The play area is spotless and the transport van tracking is brilliant." },
+    { color: "sky",   name: "Rahul M.", role: "Father of a Playgroup child", quote: "We chose Modern KD for the safety and stayed for the warmth. The play area is spotless and the transport van tracking is brilliant." },
     { color: "grass", name: "Aisha K.", role: "Mother of a Class 2 student", quote: "We've been here since playgroup. The way they balance fun and learning is wonderful — my son actually looks forward to school." },
     { color: "grape", name: "Vikram R.", role: "Father of a Nursery child", quote: "Clean, safe and genuinely caring. The admission process was simple and the staff answered all our worried-parent questions patiently." },
   ],
@@ -158,7 +158,7 @@ window.SITE = {
     kicker: "Visit / Contact",
     title: "Come say hello",
     sub: "We'd love to show you around. Walk in, call, or drop us a message anytime.",
-    address: "Modern KD Field Public School Campus, Panchsheel Garden, Naveen Shahdara, Delhi – 110032",
+    address: "Modern KD Public School Campus, Panchsheel Garden, Naveen Shahdara, Delhi – 110032",
     phone: "+91 87 55 55 55 25",
     whatsapp: "+91 87 55 55 55 25",
     email: "mkdfieldpublicschool@gmail.com",

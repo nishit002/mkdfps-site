@@ -1,7 +1,7 @@
-# MKD Field Public School — Website
+# Modern KD Public School — Website
 
-Static prototype of the MKD Field Public School website (Shahdara, Delhi).
-Playgroup, Nursery, and Classes 1–8.
+Static prototype of the Modern KD Public School website (Panchsheel Garden, Naveen Shahdara, Delhi).
+ESTD. 2004 · Govt. Recognised · Playgroup, Nursery, and Classes 1–8.
 
 **Live site:** https://nishit002.github.io/mkdfps-site/
 

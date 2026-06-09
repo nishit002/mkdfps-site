@@ -149,7 +149,7 @@ function ProgramsTeaser({ go }) {
     <section className="section" style={{ background: "var(--bg-soft)" }}>
       <div className="wrap">
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 20 }}>
-          <Head kicker={p.kicker} title="The heart of Modern KD Field: Play & Nursery"
+          <Head kicker={p.kicker} title="The heart of Modern KD: Play & Nursery"
             sub="Our littlest learners get the gentlest, most joyful start." />
           <button className="btn btn-ghost" onClick={() => go("programs")} style={{ marginBottom: 44 }}>See all programs</button>
         </div>
