@@ -362,8 +362,11 @@ function FlipPage({ p }) {
   const grad = `linear-gradient(140deg, ${p.grad[0]}, ${p.grad[1]})`;
   const isCover = p.type === "cover";
   return (
-    <div className="kb-page" data-density={isCover ? "hard" : "soft"}>
+    <div className={`kb-page${isCover ? " kb-page--cover" : ""}`} data-density={isCover ? "hard" : "soft"}>
       <div className="kb-inner" style={{ background: grad }}>
+        {isCover && <span className="kb-spine" />}
+        {isCover && <span className="kb-frame" />}
+        {isCover && <span className="kb-pages" />}
         <div className="kb-emoji">{p.emoji}</div>
         <h3>{p.title}</h3>
         {p.subtitle && <div className="kb-sub">{p.subtitle}</div>}
