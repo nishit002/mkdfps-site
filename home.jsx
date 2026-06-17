@@ -361,6 +361,27 @@ function oklchOnWarm() { return "oklch(0.30 0.07 50)"; }
 function FlipPage({ p }) {
   const grad = `linear-gradient(140deg, ${p.grad[0]}, ${p.grad[1]})`;
   const isCover = p.type === "cover";
+
+  // Content page with a real photo on top + a coloured caption panel below.
+  if (!isCover && p.img) {
+    return (
+      <div className="kb-page">
+        <div className="kb-leaf">
+          <div className="kb-photo">
+            <img src={p.img} alt={p.title} loading="lazy" />
+            <span className="kb-emoji-badge">{p.emoji}</span>
+          </div>
+          <div className="kb-body" style={{ background: grad }}>
+            <h3>{p.title}</h3>
+            {p.lines && p.lines.map((l, i) => <p key={i}>{l}</p>)}
+            {p.foot && <div className="kb-foot">{p.foot}</div>}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Cover (and any image-less page) — full-gradient graphic treatment.
   return (
     <div className={`kb-page${isCover ? " kb-page--cover" : ""}`} data-density={isCover ? "hard" : "soft"}>
       <div className="kb-inner" style={{ background: grad }}>
