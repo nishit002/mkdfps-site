@@ -54,7 +54,9 @@ function Ph({ label, color, src, className = "", style = {}, rounded = "var(--ra
   );
 }
 
-/* Brand logo lockup */
+/* Brand logo lockup — navy + gold crest (matches the school seal).
+   If SITE.brand.logo is set (e.g. "./images/logo.png") the real crest
+   image is rendered instead of the built-in CSS mark. */
 function Logo({ light = false, onClick }) {
   const b = SITE.brand;
   return (
@@ -62,20 +64,28 @@ function Logo({ light = false, onClick }) {
       display: "flex", alignItems: "center", gap: 12, background: "none",
       border: "none", padding: 0, cursor: "pointer",
     }}>
-      <span style={{ position: "relative", display: "grid", placeItems: "center",
-        width: 46, height: 46, borderRadius: 14, background: "var(--coral)",
-        boxShadow: "0 8px 16px -8px var(--coral)", flexShrink: 0 }}>
-        <span style={{ position: "absolute", width: 14, height: 14, borderRadius: "50%",
-          background: "var(--sun)", top: 8, right: 8 }} />
-        <span style={{ width: 20, height: 20, borderRadius: "50%",
-          background: "#fff" }} />
-      </span>
+      {b.logo ? (
+        <img src={b.logo} alt={`${b.name} ${b.sub}`}
+          style={{ width: 48, height: 48, borderRadius: "50%", objectFit: "cover", flexShrink: 0,
+            boxShadow: "0 8px 18px -10px var(--ink)" }} />
+      ) : (
+        <span style={{ position: "relative", display: "grid", placeItems: "center",
+          width: 48, height: 48, borderRadius: "50%", flexShrink: 0,
+          background: "radial-gradient(circle at 30% 28%, oklch(0.40 0.10 264), var(--ink))",
+          boxShadow: "0 8px 18px -10px var(--ink), inset 0 0 0 2.5px var(--sun)" }}>
+          {/* gold ring tick marks */}
+          <span style={{ position: "absolute", top: 3, left: "50%", transform: "translateX(-50%)",
+            width: 4, height: 4, borderRadius: "50%", background: "var(--sun)" }} />
+          <span style={{ fontFamily: "Fredoka", fontWeight: 700, fontSize: 19, letterSpacing: "-0.02em",
+            color: "var(--sun)", lineHeight: 1 }}>KD</span>
+        </span>
+      )}
       <span style={{ textAlign: "left", lineHeight: 1, minWidth: 0 }}>
         <span style={{ display: "flex", alignItems: "baseline", gap: 6, whiteSpace: "nowrap" }}>
-          <span style={{ fontFamily: "Fredoka", fontWeight: 600, fontSize: 19,
+          <span style={{ fontFamily: "Fredoka", fontWeight: 700, fontSize: 19,
             color: light ? "#fff" : "var(--ink)" }}>{b.name}</span>
-          <span style={{ fontFamily: "Fredoka", fontWeight: 500, fontSize: 19,
-            color: "var(--coral)" }}>{b.sub}</span>
+          <span style={{ fontFamily: "Fredoka", fontWeight: 600, fontSize: 19,
+            color: "var(--sun-d)" }}>{b.sub}</span>
         </span>
         <span style={{ display: "block", fontSize: 10.5, fontWeight: 700, letterSpacing: ".06em",
           textTransform: "uppercase", color: light ? "rgba(255,255,255,.8)" : "var(--ink-soft)",

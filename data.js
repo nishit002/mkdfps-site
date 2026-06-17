@@ -11,6 +11,21 @@ window.SITE = {
     estd: "2004",
     years: "25",
     campusPhoto: "./images/campus.jpg",
+    /* Drop the client's crest PNG at images/logo.png to show the real logo.
+       Leave as null to use the built-in navy+gold lockup. */
+    logo: null,
+  },
+
+  /* Social + contact links used in the footer icon row.
+     Replace the FB / Instagram / YouTube "#" placeholders with the
+     school's real profile URLs when available. */
+  social: {
+    facebook:  "#",
+    instagram: "#",
+    youtube:   "#",
+    whatsapp:  "https://wa.me/918755555525",
+    phone:     "tel:+918755555525",
+    email:     "mailto:mkdfieldpublicschool@gmail.com",
   },
 
   nav: [
@@ -30,7 +45,7 @@ window.SITE = {
 
   hero: {
     badge: "Admissions Open · 2026–27",
-    img: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=900&q=75",
+    img: "https://images.unsplash.com/photo-1624434350526-0ad3a4f3c1cb?auto=format&fit=crop&w=900&q=80",
     title: ["A safe, caring", "school for your", "child"],
     accentWord: 2, // which line gets the colored underline
     sub: "Govt.-recognised English-medium school in Panchsheel Garden, Naveen Shahdara. Playgroup to Class 8. Established 2004.",

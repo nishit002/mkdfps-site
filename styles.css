@@ -3,38 +3,50 @@
    ============================================================ */
 
 :root {
-  /* Canvas + ink (warm, low saturation) */
-  --bg:        oklch(0.985 0.012 95);
-  --bg-soft:   oklch(0.965 0.018 95);
-  --card:      oklch(1 0 0);
-  --ink:       oklch(0.30 0.045 275);
-  --ink-soft:  oklch(0.46 0.035 275);
-  --line:      oklch(0.90 0.02 275);
+  /* ----------------------------------------------------------------
+     MKD navy + gold system — matches the school crest (navy/gold)
+     and the Kangaroo-style premium preschool reference (indigo/gold).
+     Accent NAMES are kept (coral/sun/grass/sky/grape) so existing
+     components keep working — only the VALUES are re-tuned to a
+     cohesive jewel-toned, navy-led palette.
+     ---------------------------------------------------------------- */
 
-  /* Cohesive rainbow accents (shared chroma/lightness, varied hue) */
-  --coral:   oklch(0.71 0.165 28);
-  --coral-d: oklch(0.58 0.16 28);
-  --sun:     oklch(0.84 0.155 88);
-  --sun-d:   oklch(0.74 0.15 78);
-  --grass:   oklch(0.74 0.16 150);
-  --grass-d: oklch(0.60 0.15 150);
-  --sky:     oklch(0.72 0.13 230);
-  --sky-d:   oklch(0.58 0.14 245);
-  --grape:   oklch(0.70 0.155 320);
-  --grape-d: oklch(0.56 0.16 320);
+  /* Canvas + ink (warm cream canvas, deep-navy ink) */
+  --bg:        oklch(0.984 0.013 92);
+  --bg-soft:   oklch(0.962 0.020 90);
+  --card:      oklch(1 0 0);
+  --ink:       oklch(0.27 0.072 264);   /* deep navy — crest blue */
+  --ink-soft:  oklch(0.45 0.052 264);
+  --line:      oklch(0.90 0.022 268);
+
+  /* Primary brand = royal indigo/purple (bridges crest-navy & Kangaroo-purple) */
+  --coral:   oklch(0.45 0.155 288);
+  --coral-d: oklch(0.36 0.15 288);
+
+  /* Secondary = gold / amber (the crest gold) */
+  --sun:     oklch(0.81 0.155 82);
+  --sun-d:   oklch(0.70 0.145 74);
+
+  /* Supporting jewel tones */
+  --grass:   oklch(0.70 0.135 168);   /* emerald-teal */
+  --grass-d: oklch(0.56 0.13 168);
+  --sky:     oklch(0.64 0.135 248);   /* royal blue (navy family) */
+  --sky-d:   oklch(0.52 0.145 252);
+  --grape:   oklch(0.52 0.175 318);   /* deep magenta-purple */
+  --grape-d: oklch(0.43 0.17 318);
 
   /* tints (very light backgrounds) */
-  --coral-t: oklch(0.95 0.04 28);
-  --sun-t:   oklch(0.95 0.05 88);
-  --grass-t: oklch(0.95 0.045 150);
-  --sky-t:   oklch(0.95 0.04 230);
-  --grape-t: oklch(0.95 0.04 320);
+  --coral-t: oklch(0.95 0.035 288);
+  --sun-t:   oklch(0.955 0.055 84);
+  --grass-t: oklch(0.95 0.04 168);
+  --sky-t:   oklch(0.95 0.04 248);
+  --grape-t: oklch(0.95 0.04 318);
 
   --radius: 22px;
   --radius-lg: 34px;
   --radius-sm: 14px;
-  --shadow: 0 18px 40px -22px oklch(0.30 0.05 275 / 0.45);
-  --shadow-soft: 0 10px 30px -18px oklch(0.30 0.05 275 / 0.40);
+  --shadow: 0 18px 40px -22px oklch(0.27 0.07 264 / 0.50);
+  --shadow-soft: 0 10px 30px -18px oklch(0.27 0.07 264 / 0.42);
   --maxw: 1200px;
   --nav-h: 78px;
 }
