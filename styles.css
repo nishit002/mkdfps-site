@@ -11,42 +11,42 @@
      cohesive jewel-toned, navy-led palette.
      ---------------------------------------------------------------- */
 
-  /* Canvas + ink (warm cream canvas, deep-navy ink) */
-  --bg:        oklch(0.984 0.013 92);
-  --bg-soft:   oklch(0.962 0.020 90);
+  /* Canvas + ink — cleaner, whiter canvas for a minimalist feel */
+  --bg:        oklch(0.989 0.006 90);
+  --bg-soft:   oklch(0.968 0.012 88);
   --card:      oklch(1 0 0);
-  --ink:       oklch(0.27 0.072 264);   /* deep navy — crest blue */
-  --ink-soft:  oklch(0.45 0.052 264);
-  --line:      oklch(0.90 0.022 268);
+  --ink:       oklch(0.27 0.070 264);   /* deep navy — crest blue */
+  --ink-soft:  oklch(0.47 0.045 264);
+  --line:      oklch(0.915 0.014 264);
 
-  /* Primary brand = royal indigo/purple (bridges crest-navy & Kangaroo-purple) */
-  --coral:   oklch(0.45 0.155 288);
-  --coral-d: oklch(0.36 0.15 288);
+  /* Primary brand = refined indigo (calmer chroma, classy) */
+  --coral:   oklch(0.46 0.135 286);
+  --coral-d: oklch(0.37 0.128 286);
 
-  /* Secondary = gold / amber (the crest gold) */
-  --sun:     oklch(0.81 0.155 82);
-  --sun-d:   oklch(0.70 0.145 74);
+  /* Secondary = gold / amber (the crest gold) — the one warm signature accent */
+  --sun:     oklch(0.81 0.140 83);
+  --sun-d:   oklch(0.68 0.130 76);
 
-  /* Supporting jewel tones */
-  --grass:   oklch(0.70 0.135 168);   /* emerald-teal */
-  --grass-d: oklch(0.56 0.13 168);
-  --sky:     oklch(0.64 0.135 248);   /* royal blue (navy family) */
-  --sky-d:   oklch(0.52 0.145 252);
-  --grape:   oklch(0.52 0.175 318);   /* deep magenta-purple */
-  --grape-d: oklch(0.43 0.17 318);
+  /* Supporting tones — muted/desaturated so navy+gold stays the lead */
+  --grass:   oklch(0.70 0.075 175);   /* soft sage-teal */
+  --grass-d: oklch(0.54 0.072 175);
+  --sky:     oklch(0.63 0.080 250);   /* muted slate-blue */
+  --sky-d:   oklch(0.49 0.090 252);
+  --grape:   oklch(0.51 0.100 308);   /* muted plum */
+  --grape-d: oklch(0.41 0.105 308);
 
-  /* tints (very light backgrounds) */
-  --coral-t: oklch(0.95 0.035 288);
-  --sun-t:   oklch(0.955 0.055 84);
-  --grass-t: oklch(0.95 0.04 168);
-  --sky-t:   oklch(0.95 0.04 248);
-  --grape-t: oklch(0.95 0.04 318);
+  /* tints (very light, near-neutral washes) */
+  --coral-t: oklch(0.958 0.020 286);
+  --sun-t:   oklch(0.962 0.038 84);
+  --grass-t: oklch(0.964 0.018 175);
+  --sky-t:   oklch(0.962 0.020 250);
+  --grape-t: oklch(0.962 0.020 308);
 
   --radius: 22px;
   --radius-lg: 34px;
   --radius-sm: 14px;
-  --shadow: 0 18px 40px -22px oklch(0.27 0.07 264 / 0.50);
-  --shadow-soft: 0 10px 30px -18px oklch(0.27 0.07 264 / 0.42);
+  --shadow: 0 16px 38px -24px oklch(0.27 0.07 264 / 0.42);
+  --shadow-soft: 0 10px 28px -20px oklch(0.27 0.07 264 / 0.34);
   --maxw: 1200px;
   --nav-h: 78px;
 }
@@ -158,6 +158,45 @@ button { font-family: inherit; cursor: pointer; }
   font-family: "Fredoka", sans-serif; font-weight: 500; font-size: 14px;
   padding: 6px 14px; border-radius: 999px;
 }
+
+/* ---------- Kid-centric flipbook (StPageFlip) ---------- */
+.kb-stage { width: 100%; max-width: 880px; margin: 0 auto; }
+.kb-book { margin: 0 auto; touch-action: pan-y; }
+.kb-page {
+  background: #fff;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.16);
+}
+.kb-inner {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 30px 26px; color: #fff; box-sizing: border-box;
+}
+.kb-emoji {
+  font-size: clamp(46px, 11vw, 80px); line-height: 1; margin-bottom: 14px;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,.28));
+}
+.kb-inner h3 {
+  font-family: "Fredoka", sans-serif; font-weight: 600;
+  font-size: clamp(24px, 4.6vw, 34px); line-height: 1.08; margin-bottom: 12px;
+  white-space: pre-line; color: #fff; text-shadow: 0 2px 0 rgba(0,0,0,.14);
+}
+.kb-inner p { font-size: 15.5px; line-height: 1.5; color: rgba(255,255,255,.95); max-width: 280px; margin: 2px auto; }
+.kb-sub { margin-top: 8px; font-family: "Fredoka", sans-serif; font-weight: 500; font-size: 14px; color: rgba(255,255,255,.94); max-width: 260px; }
+.kb-foot { margin-top: 18px; font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 15px;
+  background: rgba(255,255,255,.20); padding: 7px 16px; border-radius: 999px; }
+.kb-hint { margin-top: 14px; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.88); }
+.kb-controls { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 26px; }
+.kb-arrow {
+  width: 50px; height: 50px; border-radius: 50%; border: none; cursor: pointer;
+  background: var(--coral); color: #fff; font-size: 22px; line-height: 1;
+  display: grid; place-items: center; box-shadow: 0 10px 22px -10px var(--coral);
+  transition: transform .18s;
+}
+.kb-arrow:hover { transform: translateY(-3px); }
+.kb-arrow:active { transform: scale(.94); }
+.kb-count { font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 15px; color: var(--ink-soft); min-width: 72px; }
 
 /* reveal-on-scroll */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1); }

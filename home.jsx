@@ -357,41 +357,67 @@ function KidzChillStreet({ go }) {
 }
 function oklchOnWarm() { return "oklch(0.30 0.07 50)"; }
 
-/* ===== Interactive brochure (Heyzine flipbook) ===== */
-function Brochure() {
-  const k = SITE.brochure;
-  if (!k || !k.url) return null;
+/* ===== Custom kid-centric flipbook (StPageFlip) ===== */
+function FlipPage({ p }) {
+  const grad = `linear-gradient(140deg, ${p.grad[0]}, ${p.grad[1]})`;
+  const isCover = p.type === "cover";
   return (
-    <section id="brochure" style={{ position: "relative", overflow: "hidden",
-      background: "linear-gradient(180deg, var(--ink), oklch(0.20 0.055 264))",
-      color: "#fff", padding: "92px 0", scrollMarginTop: "calc(var(--nav-h) + 12px)" }}>
-      {/* soft gold/indigo glow accents */}
-      <div className="blob" style={{ width: 260, height: 260, background: "var(--sun)", top: -70, left: "8%", opacity: .18 }} />
-      <div className="blob" style={{ width: 230, height: 230, background: "var(--grape)", bottom: -70, right: "6%", opacity: .22 }} />
+    <div className="kb-page" data-density={isCover ? "hard" : "soft"}>
+      <div className="kb-inner" style={{ background: grad }}>
+        <div className="kb-emoji">{p.emoji}</div>
+        <h3>{p.title}</h3>
+        {p.subtitle && <div className="kb-sub">{p.subtitle}</div>}
+        {p.lines && p.lines.map((l, i) => <p key={i}>{l}</p>)}
+        {p.foot && <div className="kb-foot">{p.foot}</div>}
+        {p.hint && <div className="kb-hint">{p.hint}</div>}
+      </div>
+    </div>
+  );
+}
 
-      <div className="wrap rel">
-        <div style={{ textAlign: "center", maxWidth: 720, margin: "0 auto 40px" }}>
-          <span className="kicker" style={{ color: "var(--sun)", background: "rgba(255,255,255,.08)" }}>
-            <span className="dot" style={{ background: "var(--sun)" }} />{k.kicker}
-          </span>
-          <h2 style={{ fontSize: "clamp(32px, 4.6vw, 52px)", margin: "16px 0 12px", color: "#fff" }}>{k.title}</h2>
-          <p style={{ fontSize: 18.5, color: "rgba(255,255,255,.82)" }}>{k.sub}</p>
-        </div>
+function Flipbook() {
+  const fb = SITE.flipbook;
+  if (!fb || !fb.pages) return null;
+  const stage = useRef(null);
+  const inst = useRef(null);
+  const [page, setPage] = useState(0);
+  const [total, setTotal] = useState(fb.pages.length);
 
+  useEffect(() => {
+    if (!window.St || !window.St.PageFlip || !stage.current) return;
+    const pf = new window.St.PageFlip(stage.current, {
+      width: 360, height: 480, size: "stretch",
+      minWidth: 240, maxWidth: 460, minHeight: 320, maxHeight: 600,
+      maxShadowOpacity: 0.5, showCover: true, usePortrait: true,
+      mobileScrollSupport: false, drawShadow: true, flippingTime: 700,
+    });
+    pf.loadFromHTML(stage.current.querySelectorAll(".kb-page"));
+    setTotal(pf.getPageCount());
+    pf.on("flip", (e) => setPage(e.data));
+    inst.current = pf;
+    return () => { try { pf.destroy(); } catch (e) {} };
+  }, []);
+
+  return (
+    <section id="flipbook" className="section"
+      style={{ background: "linear-gradient(180deg, var(--bg), var(--bg-soft))",
+        scrollMarginTop: "calc(var(--nav-h) + 12px)" }}>
+      <div className="wrap">
+        <Head center kicker={fb.kicker} title={fb.title} sub={fb.sub} color="grape" />
         <Reveal>
-          <div style={{ maxWidth: 940, margin: "0 auto", position: "relative" }}>
-            {/* gold-framed flipbook */}
-            <div style={{ borderRadius: "var(--radius-lg)", overflow: "hidden",
-              border: "3px solid var(--sun)", background: "#0b1024",
-              boxShadow: "0 36px 80px -28px rgba(0,0,0,.75)" }}>
-              <iframe src={k.url} title={k.title} allowFullScreen scrolling="no" loading="lazy"
-                style={{ width: "100%", height: "min(72vh, 600px)", border: "none", display: "block" }} />
-            </div>
-            <div style={{ display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap", marginTop: 24 }}>
-              <a className="btn btn-sun" href={k.url} target="_blank" rel="noopener noreferrer">📖 Open full brochure</a>
+          <div className="kb-stage">
+            <div className="kb-book" ref={stage}>
+              {fb.pages.map((p, i) => <FlipPage key={i} p={p} />)}
             </div>
           </div>
         </Reveal>
+        <div className="kb-controls">
+          <button className="kb-arrow" aria-label="Previous page"
+            onClick={() => inst.current && inst.current.flipPrev()}>‹</button>
+          <span className="kb-count">{Math.min(page + 1, total)} / {total}</span>
+          <button className="kb-arrow" aria-label="Next page"
+            onClick={() => inst.current && inst.current.flipNext()}>›</button>
+        </div>
       </div>
     </section>
   );
@@ -404,12 +430,12 @@ function Home({ go }) {
       <Marquee />
       <Highlights />
       <ProgramsTeaser go={go} />
+      <Flipbook />
       <KidzChillStreet go={go} />
-      <Brochure />
       <TestimonialStrip go={go} />
       <AdmissionBand go={go} />
     </div>
   );
 }
 
-Object.assign(window, { Home, ProgramCard, Marquee, KidzChillStreet, Brochure });
+Object.assign(window, { Home, ProgramCard, Marquee, KidzChillStreet, Flipbook, FlipPage });

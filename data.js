@@ -1,7 +1,7 @@
 /* All site content lives here so it's easy to edit. */
 window.SITE = {
   brand: {
-    name: "Modern KD",
+    name: "Modern KD Field",
     sub: "Public School",
     sample: false,
     tagline: "ESTD. 2004 · Govt. Recognised · Play to Class 8",
@@ -43,12 +43,36 @@ window.SITE = {
     { label: "Kidz Chill Street", anchor: "kidz" },
   ],
 
-  /* Interactive flipbook (Heyzine). Set url to embed; leave null to hide. */
-  brochure: {
-    kicker: "Flip through",
-    title: "Our Kidz Chill Street Brochure",
-    sub: "Take a look inside — every zone, activity and detail of Kidz Chill Street, page by page.",
-    url: "https://heyzine.com/flip-book/e212584516.html",
+  /* Custom kid-centric flipbook — real page-turning storybook built on
+     StPageFlip. Each page is rendered from this data (fully ours). */
+  flipbook: {
+    kicker: "Our little storybook",
+    title: "Flip Through the Fun!",
+    sub: "Turn the pages and peek inside Kidz Chill Street — drag a corner or tap the arrows.",
+    pages: [
+      { type: "cover", emoji: "🎪", grad: ["#3b1d6e", "#7b2ff7"],
+        title: "Kidz Chill\nStreet", subtitle: "Modern KD Field Public School",
+        foot: "Play · Chill · Skill", hint: "Tap a corner to open →" },
+      { emoji: "👋", grad: ["#ff6fae", "#ff9a5a"], title: "Welcome, friends!",
+        lines: ["A magical street made just for kids.", "Play, learn and grow — every single day!"] },
+      { emoji: "🚗", grad: ["#ff8a3d", "#ffc24b"], title: "Toy Jeep Rides",
+        lines: ["Drive your very own little jeep!", "Beep beep — a safe road just for you."] },
+      { emoji: "🐬", grad: ["#1fb6d6", "#36d1a6"], title: "Dolphin Fun Zone",
+        lines: ["Splash with remote-control dolphins.", "Make them swim, spin and play!"] },
+      { emoji: "🎶", grad: ["#7b2ff7", "#c14bff"], title: "Music & Dance",
+        lines: ["Grab the mic and shine on stage.", "Sing, dance and giggle out loud!"] },
+      { emoji: "🎯", grad: ["#2bb673", "#7ed957"], title: "Games & Play",
+        lines: ["Run, jump, aim and win!", "Real games — no mobiles needed."] },
+      { emoji: "🍿", grad: ["#ff5f6d", "#ffc371"], title: "Happy Canteen",
+        lines: ["Popcorn, snacks and cold drinks.", "Yummy treats for happy tummies!"] },
+      { emoji: "📵", grad: ["#3a7bd5", "#00d2ff"], title: "No-Mobile Zone",
+        lines: ["100% screen-free fun.", "Real play makes the biggest smiles."] },
+      { emoji: "🎉", grad: ["#ff8a00", "#e52e71"], title: "Grand Opening!",
+        lines: ["15 June 2026", "Open daily · 4 PM – 8 PM"] },
+      { type: "cover", emoji: "📍", grad: ["#7b2ff7", "#3b1d6e"],
+        title: "Come play\nwith us!", subtitle: "Panchsheel Garden, Naveen Shahdara, Delhi",
+        foot: "📞 87 55 55 55 25", hint: "First 7 days FREE!" },
+    ],
   },
 
   hero: {
@@ -78,9 +102,9 @@ window.SITE = {
   about: {
     kicker: "About our school",
     img: "https://images.unsplash.com/photo-1544773088-d142e38f5793?auto=format&fit=crop&w=1100&q=75",
-    title: "About Modern KD Public School",
+    title: "About Modern KD Field Public School",
     body: [
-      "Modern KD Public School was established in 2004 in Panchsheel Garden, Naveen Shahdara, Delhi. We are a Govt.-recognised, English-medium school offering education from Playgroup to Class 8, with a strong focus on early childhood learning.",
+      "Modern KD Field Public School was established in 2004 in Panchsheel Garden, Naveen Shahdara, Delhi. We are a Govt.-recognised, English-medium school offering education from Playgroup to Class 8, with a strong focus on early childhood learning.",
       "Our teachers are trained in early-childhood education. The campus is safe, hygienic and parent-friendly — you are welcome to visit and meet our staff during school hours.",
     ],
     points: [
@@ -182,7 +206,7 @@ window.SITE = {
     kicker: "Visit / Contact",
     title: "Visit or contact us",
     sub: "Visit the campus, call us, or send a message. We will be happy to help.",
-    address: "Modern KD Public School Campus, Panchsheel Garden, Naveen Shahdara, Delhi – 110032",
+    address: "Modern KD Field Public School Campus, Panchsheel Garden, Naveen Shahdara, Delhi – 110032",
     phone: "+91 87 55 55 55 25",
     whatsapp: "+91 87 55 55 55 25",
     email: "mkdfieldpublicschool@gmail.com",

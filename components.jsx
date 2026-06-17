@@ -82,9 +82,9 @@ function Logo({ light = false, onClick }) {
       )}
       <span style={{ textAlign: "left", lineHeight: 1, minWidth: 0 }}>
         <span style={{ display: "flex", alignItems: "baseline", gap: 6, whiteSpace: "nowrap" }}>
-          <span style={{ fontFamily: "Fredoka", fontWeight: 700, fontSize: 19,
+          <span style={{ fontFamily: "Fredoka", fontWeight: 700, fontSize: 17,
             color: light ? "#fff" : "var(--ink)" }}>{b.name}</span>
-          <span style={{ fontFamily: "Fredoka", fontWeight: 600, fontSize: 19,
+          <span style={{ fontFamily: "Fredoka", fontWeight: 600, fontSize: 17,
             color: "var(--sun-d)" }}>{b.sub}</span>
         </span>
         <span style={{ display: "block", fontSize: 10.5, fontWeight: 700, letterSpacing: ".06em",
