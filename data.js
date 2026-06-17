@@ -43,6 +43,14 @@ window.SITE = {
     { label: "Kidz Chill Street", anchor: "kidz" },
   ],
 
+  /* Interactive flipbook (Heyzine). Set url to embed; leave null to hide. */
+  brochure: {
+    kicker: "Flip through",
+    title: "Our Kidz Chill Street Brochure",
+    sub: "Take a look inside — every zone, activity and detail of Kidz Chill Street, page by page.",
+    url: "https://heyzine.com/flip-book/e212584516.html",
+  },
+
   hero: {
     badge: "Admissions Open · 2026–27",
     img: "https://images.unsplash.com/photo-1624434350526-0ad3a4f3c1cb?auto=format&fit=crop&w=900&q=80",

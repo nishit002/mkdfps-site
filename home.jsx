@@ -357,6 +357,46 @@ function KidzChillStreet({ go }) {
 }
 function oklchOnWarm() { return "oklch(0.30 0.07 50)"; }
 
+/* ===== Interactive brochure (Heyzine flipbook) ===== */
+function Brochure() {
+  const k = SITE.brochure;
+  if (!k || !k.url) return null;
+  return (
+    <section id="brochure" style={{ position: "relative", overflow: "hidden",
+      background: "linear-gradient(180deg, var(--ink), oklch(0.20 0.055 264))",
+      color: "#fff", padding: "92px 0", scrollMarginTop: "calc(var(--nav-h) + 12px)" }}>
+      {/* soft gold/indigo glow accents */}
+      <div className="blob" style={{ width: 260, height: 260, background: "var(--sun)", top: -70, left: "8%", opacity: .18 }} />
+      <div className="blob" style={{ width: 230, height: 230, background: "var(--grape)", bottom: -70, right: "6%", opacity: .22 }} />
+
+      <div className="wrap rel">
+        <div style={{ textAlign: "center", maxWidth: 720, margin: "0 auto 40px" }}>
+          <span className="kicker" style={{ color: "var(--sun)", background: "rgba(255,255,255,.08)" }}>
+            <span className="dot" style={{ background: "var(--sun)" }} />{k.kicker}
+          </span>
+          <h2 style={{ fontSize: "clamp(32px, 4.6vw, 52px)", margin: "16px 0 12px", color: "#fff" }}>{k.title}</h2>
+          <p style={{ fontSize: 18.5, color: "rgba(255,255,255,.82)" }}>{k.sub}</p>
+        </div>
+
+        <Reveal>
+          <div style={{ maxWidth: 940, margin: "0 auto", position: "relative" }}>
+            {/* gold-framed flipbook */}
+            <div style={{ borderRadius: "var(--radius-lg)", overflow: "hidden",
+              border: "3px solid var(--sun)", background: "#0b1024",
+              boxShadow: "0 36px 80px -28px rgba(0,0,0,.75)" }}>
+              <iframe src={k.url} title={k.title} allowFullScreen scrolling="no" loading="lazy"
+                style={{ width: "100%", height: "min(72vh, 600px)", border: "none", display: "block" }} />
+            </div>
+            <div style={{ display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap", marginTop: 24 }}>
+              <a className="btn btn-sun" href={k.url} target="_blank" rel="noopener noreferrer">📖 Open full brochure</a>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 function Home({ go }) {
   return (
     <div>
@@ -365,10 +405,11 @@ function Home({ go }) {
       <Highlights />
       <ProgramsTeaser go={go} />
       <KidzChillStreet go={go} />
+      <Brochure />
       <TestimonialStrip go={go} />
       <AdmissionBand go={go} />
     </div>
   );
 }
 
-Object.assign(window, { Home, ProgramCard, Marquee, KidzChillStreet });
+Object.assign(window, { Home, ProgramCard, Marquee, KidzChillStreet, Brochure });
