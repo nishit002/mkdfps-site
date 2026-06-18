@@ -100,6 +100,18 @@ window.SITE = {
 
   marquee: ["Playgroup", "Nursery", "LKG & UKG", "Primary 1–5", "Middle 6–8", "Safe Transport", "CCTV Secured", "Trained Staff"],
 
+  /* Illustrated "Our Promise" band (hand-drawn illustration + doodles) */
+  promise: {
+    kicker: "Our promise",
+    img: "./images/illustrations/motherhood.svg",
+    title: "Where every child feels at home",
+    body: [
+      "We keep things simple — a safe, caring space where little ones are seen, heard and gently encouraged.",
+      "Learning happens through play, stories and real activities, guided by trained teachers who genuinely love what they do.",
+    ],
+    points: ["Warm, trained teachers", "Learning through play", "Safe & supervised all day", "Open, friendly campus"],
+  },
+
   highlights: [
     { color: "coral", title: "Activity-based learning", text: "Children learn through activities, stories, art and play — not rote memorisation." },
     { color: "sky",   title: "Trained, supervised staff", text: "CCTV in every classroom and play area. Trained teachers supervise children throughout the day." },

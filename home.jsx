@@ -13,6 +13,10 @@ function Hero({ go }) {
       <div className="blob" style={{ width: 320, height: 320, background: "var(--coral)", top: -60, left: -80, opacity: .22 }} />
       <div className="blob" style={{ width: 240, height: 240, background: "var(--sky)", top: 120, right: -60, opacity: .20 }} />
       <div className="blob" style={{ width: 180, height: 180, background: "var(--grass)", bottom: 40, left: "40%", opacity: .16 }} />
+      {/* hand-drawn doodle accents */}
+      <Sparkle color="var(--sun)" size={26} style={{ position: "absolute", top: "30%", left: "6%", opacity: .85, zIndex: 1 }} />
+      <Sparkle color="var(--coral)" size={18} style={{ position: "absolute", top: "20%", right: "10%", opacity: .7, zIndex: 1 }} />
+      <Dots color="var(--grape)" rows={3} cols={3} style={{ position: "absolute", bottom: "16%", right: "6%", opacity: .5, zIndex: 1 }} />
 
       {/* Top campus banner removed — hero now leads with the headline + a
           happy-kids photo. (Real building photo still lives at brand.campusPhoto.) */}
@@ -123,10 +127,19 @@ function Marquee() {
 
 function Highlights() {
   return (
-    <section className="section">
+    <section className="section" style={{ position: "relative", overflow: "hidden" }}>
+      {/* doodle accents */}
+      <Sparkle color="var(--sun)" size={26} style={{ position: "absolute", top: 56, left: "8%", opacity: .8 }} />
+      <Dots color="var(--coral)" rows={4} cols={4} style={{ position: "absolute", top: 90, right: "7%", opacity: .55 }} />
+      <Sparkle color="var(--grape)" size={18} style={{ position: "absolute", bottom: 60, left: "12%", opacity: .6 }} />
       <div className="wrap">
         <Head center kicker="Why parents choose us" title="What sets us apart"
           sub="Our focus is simple — keep your child safe, and keep them learning every day." />
+        {/* hand-drawn children illustration */}
+        <Reveal>
+          <img src="./images/illustrations/children.svg" alt="Children playing together" loading="lazy"
+            style={{ width: "100%", maxWidth: 340, margin: "4px auto 40px", display: "block" }} />
+        </Reveal>
         <div className="grid" style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
           {SITE.highlights.map((h, i) => (
             <Reveal key={i} delay={i * 90}>
@@ -207,6 +220,8 @@ function AdmissionBand({ go }) {
             padding: "56px 50px", textAlign: "center", boxShadow: "var(--shadow)" }}>
             <div className="blob" style={{ width: 220, height: 220, background: "#fff", top: -70, left: -40, opacity: .14 }} />
             <div className="blob" style={{ width: 180, height: 180, background: "#fff", bottom: -70, right: -30, opacity: .12 }} />
+            <Sparkle color="#fff" size={24} style={{ position: "absolute", top: 26, left: "11%", opacity: .75 }} />
+            <Sparkle color="#fff" size={16} style={{ position: "absolute", bottom: 30, right: "13%", opacity: .65 }} />
             <div className="rel">
               <span className="pill" style={{ background: "rgba(255,255,255,.22)", color: "#fff", marginBottom: 16 }}>
                 <span style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--sun)" }} />
@@ -447,6 +462,53 @@ function Flipbook() {
   );
 }
 
+/* ===== Illustrated "Our Promise" band (hand-drawn unDraw art + doodles) ===== */
+function OurPromise() {
+  const p = SITE.promise;
+  if (!p) return null;
+  const checkCols = ["coral", "sun", "grass", "grape"];
+  return (
+    <section className="section" style={{ position: "relative", overflow: "hidden", background: "var(--bg-soft)" }}>
+      <Sparkle color="var(--sun)" size={24} style={{ position: "absolute", top: 50, right: "10%", opacity: .85 }} />
+      <Dots color="var(--grape)" rows={4} cols={5} style={{ position: "absolute", bottom: 46, left: "6%", opacity: .5 }} />
+      <div className="wrap" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 54, alignItems: "center" }}>
+        <Reveal>
+          <div style={{ position: "relative" }}>
+            <div style={{ position: "absolute", inset: "6% 8%", background: "var(--sun-t)",
+              borderRadius: "42% 58% 60% 40%", transform: "rotate(-6deg)", zIndex: 0 }} />
+            <img src={p.img} alt="A parent and child" loading="lazy"
+              style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: 430, margin: "0 auto", display: "block" }} />
+            <Sparkle color="var(--coral)" size={20} style={{ position: "absolute", top: 4, left: 10, zIndex: 2 }} />
+          </div>
+        </Reveal>
+        <Reveal delay={120}>
+          <div>
+            <span className="kicker"><span className="dot" />{p.kicker}</span>
+            <h2 style={{ fontSize: "clamp(30px, 4.2vw, 46px)", margin: "14px 0 0" }}>{p.title}</h2>
+            <Scribble color="var(--sun)" width={150} style={{ margin: "12px 0 18px" }} />
+            {p.body.map((b, i) => (
+              <p key={i} style={{ color: "var(--ink-soft)", fontSize: 18, marginBottom: 14 }}>{b}</p>
+            ))}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px 18px", marginTop: 20 }}>
+              {p.points.map((t, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                  <span style={{ width: 24, height: 24, borderRadius: "50%", background: C[checkCols[i % 4]].a,
+                    display: "grid", placeItems: "center", flexShrink: 0 }}>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
+                      <path d="M5 12l4 4 10-10" stroke="#fff" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                  <span style={{ fontFamily: "Fredoka", fontWeight: 500, fontSize: 16 }}>{t}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 function Home({ go }) {
   return (
     <div>
@@ -454,6 +516,7 @@ function Home({ go }) {
       <Marquee />
       <Highlights />
       <ProgramsTeaser go={go} />
+      <OurPromise />
       <Flipbook />
       <KidzChillStreet go={go} />
       <TestimonialStrip go={go} />
@@ -462,4 +525,4 @@ function Home({ go }) {
   );
 }
 
-Object.assign(window, { Home, ProgramCard, Marquee, KidzChillStreet, Flipbook, FlipPage });
+Object.assign(window, { Home, ProgramCard, Marquee, KidzChillStreet, Flipbook, FlipPage, OurPromise });

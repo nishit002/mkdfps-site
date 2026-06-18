@@ -95,8 +95,39 @@ function Logo({ light = false, onClick }) {
   );
 }
 
+/* ===== Hand-drawn doodle accents (Kangaroo-style) ===== */
+/* Crayon scribble underline */
+function Scribble({ color = "var(--sun)", width = 132, style = {} }) {
+  return (
+    <svg viewBox="0 0 132 13" width={width} height={width * 13 / 132} fill="none"
+      aria-hidden="true" style={{ display: "block", ...style }}>
+      <path d="M3 8.5 C 24 2.5, 44 11, 65 6 S 105 2.5, 129 7.5" stroke={color}
+        strokeWidth="5" strokeLinecap="round" />
+    </svg>
+  );
+}
+/* 4-point sparkle */
+function Sparkle({ color = "var(--sun)", size = 22, style = {} }) {
+  return (
+    <svg viewBox="0 0 24 24" width={size} height={size} fill={color} aria-hidden="true"
+      style={{ display: "block", ...style }}>
+      <path d="M12 0 C13 7 17 11 24 12 C17 13 13 17 12 24 C11 17 7 13 0 12 C7 11 11 7 12 0 Z" />
+    </svg>
+  );
+}
+/* dot grid */
+function Dots({ color = "var(--grape)", rows = 4, cols = 4, gap = 11, r = 2.6, style = {} }) {
+  const circ = [];
+  for (let y = 0; y < rows; y++) for (let x = 0; x < cols; x++)
+    circ.push(<circle key={`${x}-${y}`} cx={x * gap + r} cy={y * gap + r} r={r} fill={color} opacity={0.85} />);
+  return (
+    <svg width={(cols - 1) * gap + 2 * r} height={(rows - 1) * gap + 2 * r}
+      aria-hidden="true" style={{ display: "block", ...style }}>{circ}</svg>
+  );
+}
+
 /* Section heading block */
-function Head({ kicker, title, sub, center, color = "coral", dark = false }) {
+function Head({ kicker, title, sub, center, color = "coral", dark = false, scribble = true }) {
   const cc = C[color];
   return (
     <div className={`head ${center ? "center" : ""}`}>
@@ -106,6 +137,8 @@ function Head({ kicker, title, sub, center, color = "coral", dark = false }) {
         </span>
       )}
       <h2 style={dark ? { color: "#fff" } : {}}>{title}</h2>
+      {scribble && <Scribble color="var(--sun)" width={center ? 150 : 132}
+        style={{ margin: center ? "12px auto 2px" : "12px 0 2px" }} />}
       {sub && <p style={dark ? { color: "rgba(255,255,255,.82)" } : {}}>{sub}</p>}
     </div>
   );
@@ -138,4 +171,4 @@ function Wave({ color = "var(--bg)", flip = false }) {
   );
 }
 
-Object.assign(window, { C, Reveal, Ph, Logo, Head, Badge, Wave, useState, useEffect, useRef });
+Object.assign(window, { C, Reveal, Ph, Logo, Head, Badge, Wave, Scribble, Sparkle, Dots, useState, useEffect, useRef });
